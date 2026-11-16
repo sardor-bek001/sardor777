@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CHRONEX — Time. Redefined.</title>
+  <meta name="description" content="Chronex — har soniya uchun yaratilgan premium smart-soatlar.">
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./watches.css">
+</head>
+<body id="top">
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="#top" class="logo">CHRONEX</a>
+      <nav class="menu" id="menu">
+        <a href="#collection">Kolleksiya</a>
+        <a href="#technology">Texnologiya</a>
+        <a href="#story">Hikoyamiz</a>
+        <a href="#order" class="btn btn-sm">Buyurtma</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Menyu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text reveal">
+        <p class="eyebrow">Yangi avlod smart-soat</p>
+        <h1>TIME.<br><span>REDEFINED.</span></h1>
+        <p class="lead">Har soniya uchun yaratilgan premium muhandislik.</p>
+        <div class="hero-actions">
+          <a href="#collection" class="btn">Chronex bilan tanishing</a>
+          <a href="#order" class="btn btn-ghost">Hozir buyurtma</a>
+        </div>
+      </div>
+      <div class="hero-watch reveal">
+        <div class="watch">
+          <div class="strap strap-top"></div>
+          <div class="case">
+            <div class="dial" id="dial">
+              <div class="ticks" id="ticks"></div>
+              <div class="hand hour" id="hHour"></div>
+              <div class="hand minute" id="hMin"></div>
+              <div class="hand second" id="hSec"></div>
+              <div class="pin"></div>
+              <div class="digital" id="digital">00:00</div>
+            </div>
+          </div>
+          <div class="strap strap-bottom"></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">Pastga suring ↓</div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div class="stat reveal"><b data-count="14">0</b><span>kun batareya</span></div>
+      <div class="stat reveal"><b data-count="50">0</b><span>metr suv himoyasi</span></div>
+      <div class="stat reveal"><b data-count="1000">0</b><span>nit yorqinlik</span></div>
+      <div class="stat reveal"><b data-count="100">0</b><span>+ sport rejimi</span></div>
+    </div>
+  </section>
+
+  <!-- COLLECTION -->
+  <section class="section" id="collection">
+    <div class="container">
+      <p class="eyebrow center">Premium kolleksiya</p>
+      <h2 class="center">Premium Collection</h2>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-img c1"><i></i></div>
+          <h3>Chronex Aero</h3>
+          <p>Yengil titan korpus. Kundalik va sport uchun ideal.</p>
+          <div class="card-foot"><strong>$249</strong><button class="btn btn-sm" data-model="Chronex Aero">Tanlash</button></div>
+        </article>
+        <article class="card featured reveal">
+          <span class="badge">Eng ommabop</span>
+          <div class="card-img c2"><i></i></div>
+          <h3>Chronex Titan</h3>
+          <p>Sapfir oyna, GPS va yurak ritmi sensori bilan flagman.</p>
+          <div class="card-foot"><strong>$349</strong><button class="btn btn-sm" data-model="Chronex Titan">Tanlash</button></div>
+        </article>
+        <article class="card reveal">
+          <div class="card-img c3"><i></i></div>
+          <h3>Chronex Nova</h3>
+          <p>Nafis dizayn, ingichka korpus va premium teri tasma.</p>
+          <div class="card-foot"><strong>$299</strong><button class="btn btn-sm" data-model="Chronex Nova">Tanlash</button></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNOLOGY -->
+  <section class="section dark" id="technology">
+    <div class="container">
+      <p class="eyebrow center">Technology</p>
+      <h2 class="center">Texnologiya</h2>
+
+      <div class="feature reveal" id="engineering">
+        <div class="feature-text">
+          <p class="eyebrow">Muhandislik</p>
+          <h3>Ichkaridan yaratilgan</h3>
+          <p>Aviatsiya darajasidagi titan korpus, sapfir oyna va yuqori aniqlikdagi harakat mexanizmi. Yurak ritmi, kislorod (SpO₂), uyqu va harorat sensorlari butun kun davomida sizni kuzatib boradi.</p>
+          <a href="#order" class="link">Batafsil →</a>
+        </div>
+        <div class="feature-art art-eng"><div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div></div>
+      </div>
+
+      <div class="feature reverse reveal">
+        <div class="feature-text">
+          <p class="eyebrow">Ekran</p>
+          <h3>AMOLED Display</h3>
+          <p>1000 nit gacha yorqinlik, 466×466 piksel aniqlik va doimiy yoniq (always-on) rejim. Quyoshda ham ravshan, tunda ham ko'zni toliqtirmaydi.</p>
+          <a href="#order" class="link">Batafsil →</a>
+        </div>
+        <div class="feature-art art-amoled"><div class="screen"><span id="amoledTime">12:00</span><small>AMOLED</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section" id="story">
+    <div class="container narrow center reveal">
+      <p class="eyebrow">Brand Story</p>
+      <h2>Bizning hikoyamiz</h2>
+      <p class="big">Chronex bir g'oyadan boshlandi: vaqt shunchaki o'lchanmasligi, balki qadrlanishi kerak. Muhandislar va dizaynerlar jamoasi klassik soatsozlik san'atini zamonaviy texnologiya bilan birlashtirib, har kuni sizga xizmat qiladigan soat yaratdi.</p>
+      <a href="#cta" class="btn btn-ghost">Kolleksiyani ko'rish</a>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" id="cta">
+    <div class="container center reveal">
+      <p class="eyebrow">Own Your Time</p>
+      <h2>OWN YOUR TIME.</h2>
+      <p class="lead">Chronex'ingizni bugun tanlang.</p>
+      <a href="#order" class="btn">Hozir buyurtma berish</a>
+    </div>
+  </section>
+
+  <!-- ORDER -->
+  <section class="section order" id="order">
+    <div class="container narrow">
+      <h2 class="center">Chronex'ga buyurtma bering</h2>
+      <p class="center muted">Ma'lumotlaringizni to'ldiring, so'ng buyurtmani Telegram orqali yuboring.</p>
+
+      <form id="orderForm" class="form" novalidate>
+        <div class="row three">
+          <label>Model
+            <select id="model" name="model">
+              <option value="Chronex Aero" data-price="249">Chronex Aero — $249</option>
+              <option value="Chronex Titan" data-price="349">Chronex Titan — $349</option>
+              <option value="Chronex Nova" data-price="299">Chronex Nova — $299</option>
+            </select>
+          </label>
+          <label>Rang
+            <select id="finish" name="finish">
+              <option>Midnight Black</option>
+              <option>Silver Steel</option>
+              <option>Rose Gold</option>
+            </select>
+          </label>
+          <label>Soni
+            <div class="qty">
+              <button type="button" id="minus">−</button>
+              <input id="qty" type="number" value="1" min="1" max="10" readonly>
+              <button type="button" id="plus">+</button>
+            </div>
+          </label>
+        </div>
+
+        <label>Ismingiz
+          <input id="name" type="text" placeholder="Ism Familiya" autocomplete="name">
+          <small class="err" data-for="name"></small>
+        </label>
+        <label>Telefon raqami
+          <input id="phone" type="tel" placeholder="+998 90 123 45 67" autocomplete="tel">
+          <small class="err" data-for="phone"></small>
+        </label>
+        <label>Yetkazib berish manzili
+          <input id="address" type="text" placeholder="Shahar, ko'cha, uy" autocomplete="street-address">
+          <small class="err" data-for="address"></small>
+        </label>
+        <label>Izoh (ixtiyoriy)
+          <textarea id="note" rows="3" placeholder="Qo'shimcha istaklar..."></textarea>
+        </label>
+
+        <div class="total">Jami: <b id="total">$249</b></div>
+        <button class="btn btn-block" type="submit">Buyurtmani tayyorlash</button>
+      </form>
+
+      <div class="done" id="done" hidden>
+        <div class="check">✓</div>
+        <h3>Deyarli tayyor!</h3>
+        <p>Quyidagi tugmani bosing. Telegram buyurtmangiz bilan ochiladi, faqat <b>Send</b> ni bosing.</p>
+        <a id="tgBtn" class="btn btn-block" href="#" target="_blank" rel="noopener">Telegramda yuborish</a>
+        <button class="link back" id="backBtn" type="button">← Ma'lumotni o'zgartirish</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container foot-grid">
+      <div>
+        <a href="#top" class="logo">CHRONEX</a>
+        <p class="muted">Time. Redefined.</p>
+      </div>
+      <div>
+        <h4>Biz haqimizda</h4>
+        <a href="#story">Hikoyamiz</a>
+        <a href="#engineering">Muhandislik</a>
+      </div>
+      <div>
+        <h4>Mijozlarga yordam</h4>
+        <a href="#order">Aloqa</a>
+        <a href="#cta">Kafolat</a>
+      </div>
+      <div>
+        <h4>Kuzatib boring</h4>
+        <a href="#top">Instagram</a>
+        <a href="#top">YouTube</a>
+        <a href="#top">X</a>
+      </div>
+    </div>
+    <p class="copy">© <span id="year"></span> CHRONEX. Barcha huquqlar himoyalangan.</p>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Yuqoriga">↑</button>
+  <meta property="og:title" content="CHRONEX — Time. Redefined.">
+<meta property="og:description" content="Har soniya uchun yaratilgan premium smart-soatlar.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#07080b">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌚</text></svg>">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"CHRONEX","description":"Premium smart-soatlar"}
+</script>
+<section class="section" id="contact">
+  <div class="container">
+    <p class="eyebrow center">Aloqa</p>
+    <h2 class="center">Biz bilan bog'laning</h2>
+    <div class="cx3-grid">
+      <div class="cx3-box"><span>💬</span><b>Telegram</b><p>Tezkor javob, har kuni</p>
+        <a class="link" id="cx3Tg" href="#" target="_blank" rel="noopener">Yozish →</a></div>
+      <div class="cx3-box"><span>🚚</span><b>Yetkazib berish</b><p>Shahringizni tanlang, taxminiy muddatni ko'ring</p>
+        <select id="cx3City" aria-label="Shahar">
+          <option value="">Shahar...</option>
+          <option value="1-2">Samarqand</option>
+          <option value="1-2">Toshkent</option>
+          <option value="2-3">Buxoro</option>
+          <option value="2-4">Boshqa shahar</option>
+        </select>
+        <small id="cx3Eta" class="muted"></small></div>
+      <div class="cx3-box"><span>🛡️</span><b>Kafolat va qaytarish</b><p>Shartlar bilan tanishing</p>
+        <button class="link" type="button" data-legal="warranty">Batafsil →</button></div>
+    </div>
+  </div>
+</section>
+
+<div class="cx3-cookie" id="cx3Cookie" hidden>
+  <p>Sayt buyurtma ma'lumotlarini qurilmangizda saqlaydi (localStorage). <button class="link" type="button" data-legal="privacy">Maxfiylik</button></p>
+  <button class="btn btn-sm" id="cx3Ok" type="button">Tushunarli</button>
+</div>
+
+<div class="cx3-modal" id="cx3Modal" hidden>
+  <div class="cx3-mbox"><button class="cx3-x" type="button" aria-label="Yopish">×</button>
+    <h3 id="cx3Title"></h3><p id="cx3Text"></p></div>
+</div><section class="section dark" id="advisor">
+  <div class="container">
+    <p class="eyebrow center">Maslahatchi</p>
+    <h2 class="center">Batareya va o'lchamni hisoblang</h2>
+    <p class="center muted">Bu taxminiy hisob-kitob. Haqiqiy natija foydalanishga qarab farq qiladi.</p>
+
+    <div class="cx4-two">
+      <div class="cx4-card">
+        <h3>🔋 Batareya kalkulyatori</h3>
+        <label class="cx4-l">Model
+          <select id="cx4Model">
+            <option value="14">Chronex Aero</option>
+            <option value="10">Chronex Titan</option>
+            <option value="12">Chronex Nova</option>
+          </select>
+        </label>
+        <label class="cx4-l">Ekran yorqinligi: <b id="cx4BrV">50</b>%
+          <input type="range" id="cx4Br" min="10" max="100" value="50">
+        </label>
+        <label class="cx4-l">GPS (soat/kun): <b id="cx4GpsV">0</b>
+          <input type="range" id="cx4Gps" min="0" max="6" step="0.5" value="0">
+        </label>
+        <label class="cx4-l">Bildirishnomalar (kuniga): <b id="cx4NtV">50</b>
+          <input type="range" id="cx4Nt" min="0" max="300" step="10" value="50">
+        </label>
+        <label class="cx4-check"><input type="checkbox" id="cx4Aod"> Doimiy yoniq ekran (always-on)</label>
+        <div class="cx4-out">
+          <b id="cx4Days">—</b><span>kun ishlaydi (taxminan)</span>
+          <div class="cx4-meter"><i id="cx4Meter"></i></div>
+        </div>
+      </div>
+
+      <div class="cx4-card">
+        <h3>⌚ Bilak o'lchami</h3>
+        <label class="cx4-l">Bilak aylanasi: <b id="cx4WrV">16</b> sm
+          <input type="range" id="cx4Wr" min="12" max="22" step="0.5" value="16">
+        </label>
+        <div class="cx4-out">
+          <b id="cx4Size">M</b><span id="cx4SizeTxt"></span>
+        </div>
+        <p class="muted cx4-note">Bilagingizning eng ingichka joyini yumshoq lenta bilan o'lchang.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FILIALLAR ===== -->
+<section class="section" id="branches">
+  <div class="container">
+    <p class="eyebrow center">Manzillar</p>
+    <h2 class="center">Do'konlarimiz</h2>
+    <div class="cx4-branches" id="cx4Branches"></div>
+  </div>
+</section>
+
+<!-- ===== XABAR YUBORISH + ULASHISH ===== -->
+<section class="section dark" id="message">
+  <div class="container narrow">
+    <p class="eyebrow center">Savolingiz bormi?</p>
+    <h2 class="center">Bizga yozing</h2>
+    <form class="form" id="cx4Msg" novalidate>
+      <label>Ismingiz
+        <input id="cx4MName" type="text" placeholder="Ism" autocomplete="name">
+        <small class="err" id="cx4EName"></small>
+      </label>
+      <label>Telefon yoki @username
+        <input id="cx4MPhone" type="text" placeholder="+998 90 123 45 67" autocomplete="tel">
+        <small class="err" id="cx4EPhone"></small>
+      </label>
+      <label>Xabar
+        <textarea id="cx4MText" rows="4" placeholder="Savolingizni yozing..."></textarea>
+        <small class="err" id="cx4EText"></small>
+      </label>
+      <button class="btn btn-block" type="submit">Telegramda yuborish</button>
+    </form>
+
+    <div class="cx4-share">
+      <span class="muted">Do'stingizga ulashing:</span>
+      <button class="btn btn-sm btn-ghost" id="cx4Share" type="button">↗ Ulashish</button>
+      <button class="btn btn-sm btn-ghost" id="cx4Copy" type="button">🔗 Havolani nusxalash</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOZLAMALAR PANELI (</body> dan oldin) ===== -->
+<button class="cx4-gear" id="cx4Gear" type="button" aria-label="Sozlamalar" aria-expanded="false">⚙</button>
+<aside class="cx4-panel" id="cx4Panel" hidden>
+  <h4>Sozlamalar</h4>
+  <div class="cx4-row">
+    <span>Matn o'lchami</span>
+    <div>
+      <button type="button" id="cx4FMinus" aria-label="Kichraytirish">A−</button>
+      <button type="button" id="cx4FReset" aria-label="Asl holat">A</button>
+      <button type="button" id="cx4FPlus" aria-label="Kattalashtirish">A+</button>
+    </div>
+  </div>
+  <div class="cx4-row"><span>Yuqori kontrast</span><button type="button" id="cx4HC" aria-pressed="false">O'chiq</button></div>
+  <div class="cx4-row"><span>Narx so'mda</span><button type="button" id="cx4UZS" aria-pressed="false">O'chiq</button></div>
+  <div class="cx4-row"><span>Buyurtmalarim</span><button type="button" id="cx4Hist">Ko'rish</button></div>
+  <div class="cx4-row"><span>Tezkor tugmalar</span><button type="button" id="cx4Keys">?</button></div>
+</aside>
+
+<!-- Umumiy modal -->
+<div class="cx4-modal" id="cx4Modal" hidden>
+  <div class="cx4-mbox" role="dialog" aria-modal="true" aria-labelledby="cx4MTitle">
+    <button class="cx4-x" type="button" aria-label="Yopish">×</button>
+    <h3 id="cx4MTitle"></h3>
+    <div id="cx4MBody"></div>
+  </div>
+</div>
+
+<script src="./script.js"></script>
+  <script src="./watch.js"></script>
+  <script src="./chronex-lab.js"></script>
+  <script src="./chronex-plus.js"></script>
+  <script src="./chronex-max.js"></script>
+  <script src="./chronex-pro.js"></script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+/* ===== Jonli soatlar (qo'shimcha modul) ===== */
+.lw{background:radial-gradient(60% 50% at 50% 0%,rgba(201,168,106,.10),transparent 70%),var(--bg);border-block:1px solid var(--line)}
+.lw-modes{display:flex;justify-content:center;gap:10px;margin:28px 0 0}
+.lw-modes button{background:var(--card);color:var(--muted);border:1px solid var(--line);padding:9px 20px;border-radius:999px;cursor:pointer;font:inherit;font-size:14px;transition:.25s}
+.lw-modes button.on{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#111;border-color:transparent;font-weight:700}
+.lw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:50px}
+
+.lw-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 22px 26px;position:relative;overflow:hidden;
+  opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s,border-color .3s}
+.lw-card.lw-in{opacity:1;transform:none}
+.lw-card:hover{border-color:var(--accent)}
+.lw-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,var(--glow),transparent 62%);opacity:.22;pointer-events:none;transition:.4s}
+.lw-card:hover::before{opacity:.42}
+
+.lw-stage{position:relative;transition:transform .15s ease-out;transform-style:preserve-3d;will-change:transform}
+.lw-stage.lw-reset{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.lw-svg{display:block;width:100%;max-width:250px;margin:0 auto;filter:drop-shadow(0 22px 26px rgba(0,0,0,.6));animation:lwFloat 7s ease-in-out infinite}
+.lw-card:nth-child(2) .lw-svg{animation-delay:-2s}
+.lw-card:nth-child(3) .lw-svg{animation-delay:-4s}
+@keyframes lwFloat{50%{transform:translateY(-8px)}}
+.lw-glare{position:absolute;inset:0;pointer-events:none;border-radius:50%;
+  background:radial-gradient(circle at var(--gx,50%) var(--gy,30%),rgba(255,255,255,.22),transparent 45%);opacity:0;transition:opacity .3s}
+.lw-stage:hover .lw-glare{opacity:1}
+
+.lw-info{text-align:center;position:relative}
+.lw-time{font-variant-numeric:tabular-nums;color:var(--accent2);letter-spacing:.18em;font-size:14px;margin-top:6px}
+.lw-info h3{margin:6px 0 6px}
+.lw-info p{color:var(--muted);font-size:15px}
+.lw-chips{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:16px 0 4px}
+.lw-chips li{font-size:12px;border:1px solid var(--line);color:var(--muted);padding:4px 12px;border-radius:999px}
+.lw-foot{display:flex;justify-content:space-between;align-items:center;margin-top:20px;text-align:left}
+.lw-foot strong{font-size:26px}
+
+@media(max-width:900px){
+  .lw-grid{grid-template-columns:1fr;max-width:460px;margin-inline:auto}
+}/* ===== Jonli soatlar (qo'shimcha modul) ===== */
+.lw{background:radial-gradient(60% 50% at 50% 0%,rgba(201,168,106,.10),transparent 70%),var(--bg);border-block:1px solid var(--line)}
+.lw-modes{display:flex;justify-content:center;gap:10px;margin:28px 0 0}
+.lw-modes button{background:var(--card);color:var(--muted);border:1px solid var(--line);padding:9px 20px;border-radius:999px;cursor:pointer;font:inherit;font-size:14px;transition:.25s}
+.lw-modes button.on{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#111;border-color:transparent;font-weight:700}
+.lw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:50px}
+
+.lw-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 22px 26px;position:relative;overflow:hidden;
+  opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s,border-color .3s}
+.lw-card.lw-in{opacity:1;transform:none}
+.lw-card:hover{border-color:var(--accent)}
+.lw-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,var(--glow),transparent 62%);opacity:.22;pointer-events:none;transition:.4s;animation:lwGlow 5s ease-in-out infinite}
+.lw-card:hover::before{opacity:.42}
+@keyframes lwGlow{50%{opacity:.4}}
+
+.lw-stage{position:relative;transition:transform .15s ease-out;transform-style:preserve-3d;will-change:transform}
+.lw-stage.lw-reset{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+/* o'z-o'zidan chayqalish (sichqoncha yo'q paytda ham qimirlab turadi) */
+.lw-stage.lw-idle{animation:lwSway 8s ease-in-out infinite}
+@keyframes lwSway{
+  0%{transform:perspective(900px) rotateY(0) rotateX(0)}
+  25%{transform:perspective(900px) rotateY(11deg) rotateX(4deg)}
+  50%{transform:perspective(900px) rotateY(0) rotateX(-3deg)}
+  75%{transform:perspective(900px) rotateY(-11deg) rotateX(4deg)}
+  100%{transform:perspective(900px) rotateY(0) rotateX(0)}
+}
+.lw-svg{display:block;width:100%;max-width:250px;margin:0 auto;filter:drop-shadow(0 22px 26px rgba(0,0,0,.6));animation:lwFloat 7s ease-in-out infinite}
+.lw-card:nth-child(2) .lw-svg{animation-delay:-2s}
+.lw-card:nth-child(3) .lw-svg{animation-delay:-4s}
+@keyframes lwFloat{50%{transform:translateY(-8px)}}
+.lw-glare{position:absolute;inset:0;pointer-events:none;border-radius:50%;
+  background:radial-gradient(circle at var(--gx,50%) var(--gy,30%),rgba(255,255,255,.22),transparent 45%);opacity:0;transition:opacity .3s}
+.lw-stage:hover .lw-glare{opacity:1}
+
+.lw-info{text-align:center;position:relative}
+.lw-time{font-variant-numeric:tabular-nums;color:var(--accent2);letter-spacing:.18em;font-size:14px;margin-top:6px}
+.lw-info h3{margin:6px 0 6px}
+.lw-info p{color:var(--muted);font-size:15px}
+
+/* Ranglar */
+.lw-colors{margin-top:18px;display:grid;gap:12px;justify-items:center}
+.lw-label{font-size:13px;color:var(--muted)}
+.lw-label b{color:var(--text);font-weight:600}
+.lw-swatches{display:flex;gap:12px;justify-content:center}
+.lw-sw{width:30px;height:30px;border-radius:50%;border:2px solid transparent;outline:1px solid var(--line);outline-offset:2px;cursor:pointer;transition:.2s}
+.lw-sw:hover{transform:scale(1.15)}
+.lw-sw.on{border-color:var(--bg);outline:2px solid var(--accent);transform:scale(1.1)}
+.lw-custom{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.lw-custom label{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);cursor:pointer}
+.lw-custom input[type=color]{width:30px;height:30px;padding:0;border:1px solid var(--line);border-radius:8px;background:none;cursor:pointer}
+.lw-custom input[type=color]::-webkit-color-swatch-wrapper{padding:2px}
+.lw-custom input[type=color]::-webkit-color-swatch{border:0;border-radius:6px}
+
+.lw-chips{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:16px 0 4px}
+.lw-chips li{font-size:12px;border:1px solid var(--line);color:var(--muted);padding:4px 12px;border-radius:999px}
+.lw-foot{display:flex;justify-content:space-between;align-items:center;margin-top:20px;text-align:left}
+.lw-foot strong{font-size:26px}
+
+/* Qurilmada "harakatni kamaytirish" yoqilgan bo'lsa ham soatlar qimirlab tursin */
+.lw-svg{animation:lwFloat 7s ease-in-out infinite!important}
+.lw-stage.lw-idle{animation:lwSway 8s ease-in-out infinite!important}
+.lw-card::before{animation:lwGlow 5s ease-in-out infinite!important}
+
+@media(max-width:900px){
+  .lw-grid{grid-template-columns:1fr;max-width:460px;margin-inline:auto}
+}/* ===== CHRONEX extras.css — qo'shimcha modul (mavjud kodga tegmaydi) ===== */
+.cx-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent2),var(--accent));z-index:100}
+.cx-theme{background:none;border:1px solid var(--line);color:var(--text);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:16px;margin-left:14px;transition:.2s}
+.cx-theme:hover{border-color:var(--accent)}
+.menu a.act:not(.btn){color:var(--text);box-shadow:0 2px 0 var(--accent)}
+
+/* Light theme */
+[data-theme=light]{--bg:#f7f5f0;--bg2:#ece8de;--card:#fff;--line:#d9d2c3;--text:#15171d;--muted:#5b6272}
+[data-theme=light] .header.scrolled{background:rgba(247,245,240,.9)}
+[data-theme=light] .big{color:#3b4150}
+[data-theme=light] .card-img{background:radial-gradient(circle at 50% 40%,#fff,#e4ddcd)}
+[data-theme=light] .hero{background:radial-gradient(60% 60% at 75% 45%,rgba(201,168,106,.28),transparent 70%),var(--bg)}
+[data-theme=light] .cx-heart{background:rgba(255,255,255,.7);color:#15171d}
+@media(max-width:900px){[data-theme=light] .menu{background:rgba(247,245,240,.97)}}
+
+/* Toast */
+.cx-toasts{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:200;display:grid;gap:8px;justify-items:center;pointer-events:none}
+.cx-toast{background:var(--card);color:var(--text);border:1px solid var(--accent);padding:11px 20px;border-radius:999px;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.4);animation:cxIn .3s;transition:.4s}
+.cx-toast.out{opacity:0;transform:translateY(10px)}
+@keyframes cxIn{from{opacity:0;transform:translateY(14px)}}
+
+/* Dock + drawer */
+.cx-dock{position:fixed;left:20px;bottom:20px;display:flex;gap:10px;z-index:45}
+.cx-dock button{background:var(--bg);color:var(--text);border:1px solid var(--accent);border-radius:999px;padding:11px 18px;cursor:pointer;font:inherit;font-size:15px;transition:.2s}
+.cx-dock button:hover{transform:translateY(-2px)}
+.cx-dock b{color:var(--accent);margin-left:4px}
+.cx-veil{position:fixed;inset:0;background:rgba(0,0,0,.55);opacity:0;pointer-events:none;transition:.3s;z-index:89}
+.cx-veil.open{opacity:1;pointer-events:auto}
+.cx-drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,100%);background:var(--bg2);border-left:1px solid var(--line);z-index:90;transform:translateX(105%);transition:.35s;display:flex;flex-direction:column}
+.cx-drawer.open{transform:none}
+.cx-dh{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid var(--line)}
+.cx-tabs{display:flex;gap:8px}
+.cx-tabs button{background:none;border:1px solid var(--line);color:var(--muted);padding:8px 16px;border-radius:999px;cursor:pointer;font:inherit;font-size:14px}
+.cx-tabs button.on{background:var(--accent);color:#111;border-color:var(--accent);font-weight:700}
+.cx-x{background:none;border:0;color:var(--text);font-size:28px;cursor:pointer;line-height:1}
+.cx-body{flex:1;overflow:auto;padding:16px 20px;display:grid;align-content:start;gap:12px}
+.cx-df{padding:16px 20px;border-top:1px solid var(--line);display:grid;gap:8px}
+.cx-df:empty{display:none}
+.cx-row{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.cx-row small{display:block;color:var(--muted)}
+.cx-q{display:flex;align-items:center;gap:10px}
+.cx-q button,.cx-rm{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--text);cursor:pointer}
+.cx-q button:hover,.cx-rm:hover{border-color:var(--accent)}
+.cx-empty{color:var(--muted);text-align:center;padding:40px 0}
+.cx-pr,.cx-promo{display:flex;gap:8px}
+.cx-pr input,.cx-promo input{text-transform:uppercase}
+.cx-sum{display:flex;justify-content:space-between;color:var(--muted);font-size:15px}
+.cx-sum.big{color:var(--text);font-size:19px}.cx-sum.big b{color:var(--accent)}
+.cx-heart{position:absolute;top:14px;left:14px;z-index:3;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.35);color:#fff;cursor:pointer;font-size:17px;transition:.2s}
+.cx-heart:hover{transform:scale(1.12)}
+.cx-heart.on{color:#ff5a6e;border-color:#ff5a6e}
+.cx-btns{display:flex;gap:8px;align-items:center}
+
+/* Sort + compare */
+.cx-sort{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:30px}
+.cx-sort button{background:var(--card);color:var(--muted);border:1px solid var(--line);padding:8px 18px;border-radius:999px;cursor:pointer;font:inherit;font-size:14px}
+.cx-sort button.on{background:var(--accent);color:#111;border-color:var(--accent);font-weight:700}
+
+/* Modal + compare table */
+.cx-modal{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:150;display:grid;place-items:center;padding:16px;animation:cxIn .25s}
+.cx-mbox{position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:30px 24px;width:min(760px,100%);max-height:90vh;overflow:auto}
+.cx-mbox>.cx-x{position:absolute;top:10px;right:14px}
+.cx-mbox h3{margin-bottom:16px}
+.cx-tbl{width:100%;border-collapse:collapse;min-width:520px}
+.cx-tbl th,.cx-tbl td{padding:12px 10px;border-bottom:1px solid var(--line);text-align:center;font-size:14px}
+.cx-tbl th:first-child,.cx-tbl td:first-child{text-align:left;color:var(--muted)}
+.cx-tbl th{color:var(--accent)}
+.cx-wrap{overflow-x:auto}
+
+/* Sale strip */
+.cx-sale{background:linear-gradient(135deg,rgba(201,168,106,.18),rgba(201,168,106,.05));border-bottom:1px solid var(--line);padding:26px 0}
+.cx-sale-in{display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.cx-sale-in span{display:block;color:var(--muted);font-size:14px}
+.cx-cd{display:flex;gap:10px}
+.cx-cd div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 12px;text-align:center;min-width:62px}
+.cx-cd b{display:block;font-size:22px;color:var(--accent);font-variant-numeric:tabular-nums}
+.cx-cd small{font-size:11px;color:var(--muted)}
+
+/* Tools */
+.cx-wc{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px}
+.cx-wc div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 10px;text-align:center}
+.cx-wc small{color:var(--muted);display:block}
+.cx-wc b{display:block;font-size:22px;margin-top:6px;color:var(--accent2);font-variant-numeric:tabular-nums}
+.cx-tools{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:30px}
+.cx-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;text-align:center}
+.cx-box h3{font-size:20px}
+.cx-big{font-size:clamp(34px,6vw,52px);font-weight:800;font-variant-numeric:tabular-nums;color:var(--accent2);margin:14px 0}
+.cx-ctl{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cx-laps{list-style:none;margin-top:14px;max-height:120px;overflow:auto;color:var(--muted);font-size:14px;font-variant-numeric:tabular-nums}
+.cx-laps li{padding:4px 0;border-bottom:1px dashed var(--line)}
+.cx-tm-in{width:90px;text-align:center}
+
+/* Order extras */
+.cx-calc{display:grid;gap:8px}
+.cx-inst{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:14px;justify-content:flex-end}
+.cx-inst button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:5px 14px;cursor:pointer;font:inherit;font-size:13px}
+.cx-inst button.on{background:var(--accent);color:#111;border-color:var(--accent);font-weight:700}
+.cx-inst b{color:var(--accent)}
+
+/* Reviews */
+.cx-rv{overflow:hidden;margin-top:40px}
+.cx-rv-track{display:flex;transition:transform .6s}
+.cx-rv-item{min-width:100%;padding:0 10px;text-align:center}
+.cx-rv-item p{font-size:20px;color:var(--text)}
+.cx-rv-item small{display:block;margin-top:14px;color:var(--accent);letter-spacing:.1em}
+.cx-stars{color:var(--accent);letter-spacing:4px;margin-bottom:12px}
+.cx-dots{display:flex;gap:10px;justify-content:center;margin-top:26px}
+.cx-dots button{width:10px;height:10px;border-radius:50%;border:0;background:var(--line);cursor:pointer}
+.cx-dots button.on{background:var(--accent);transform:scale(1.3)}
+
+/* FAQ */
+.cx-faq{margin-top:36px;display:grid;gap:12px}
+.cx-faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
+.cx-faq details[open]{border-color:var(--accent)}
+.cx-faq summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+.cx-faq summary::after{content:"+";color:var(--accent);font-size:22px;line-height:1}
+.cx-faq details[open] summary::after{content:"−"}
+.cx-faq p{color:var(--muted);margin-top:12px;font-size:15px}
+
+/* Newsletter */
+.cx-news{border-top:1px solid var(--line);margin-top:40px;padding-top:30px;text-align:center}
+.cx-news form{display:flex;gap:10px;max-width:460px;margin:14px auto 0}
+
+@media(max-width:900px){
+  .cx-wc{grid-template-columns:repeat(2,1fr)}
+  .cx-tools{grid-template-columns:1fr}
+  .cx-sale-in{justify-content:center;text-align:center}
+  .cx-dock{left:12px;bottom:12px}
+  .cx-news form{flex-direction:column}
+}/* ===== CHRONEX extras2.css — jonli animatsiyalar (mavjud kodga tegmaydi) ===== */
+@keyframes cx2Spin{to{transform:rotate(360deg)}}
+@keyframes cx2Blink{50%{opacity:0}}
+@keyframes cx2Fade{from{opacity:0;transform:translateY(14px)}}
+@keyframes cx2Shine{to{background-position:200% center}}
+@keyframes cx2Glow{50%{box-shadow:0 0 44px rgba(201,168,106,.38)}}
+@keyframes cx2Mq{to{transform:translateX(-50%)}}
+@keyframes cx2Orb{from{transform:rotate(0) translateX(var(--R,240px))}to{transform:rotate(360deg) translateX(var(--R,240px))}}
+@keyframes cx2Rp{to{transform:scale(4);opacity:0}}
+@keyframes cx2Beat{0%,100%{transform:scale(1)}15%{transform:scale(1.3)}30%{transform:scale(1)}45%{transform:scale(1.2)}}
+@keyframes cx2Ecg{from{stroke-dashoffset:600}to{stroke-dashoffset:-600}}
+@keyframes cx2Chg{0%{width:12%}80%,100%{width:100%}}
+@keyframes cx2Pulse{50%{transform:scale(1.05);opacity:.4}}
+
+/* Hero */
+.hero{overflow:hidden}
+.hero>.container{position:relative;z-index:1}
+.cx2-cv{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.hero h1 span{background-image:linear-gradient(90deg,#e8d3a0,#c9a86a,#fff3c8,#c9a86a,#e8d3a0);background-size:200% auto;animation:cx2Shine 4s linear infinite}
+.cx2-type{font-size:20px;color:var(--accent2);min-height:30px;margin:-12px 0 26px}
+.cx2-type i{display:inline-block;width:2px;height:1em;background:var(--accent);margin-left:3px;vertical-align:-2px;animation:cx2Blink 1s steps(1) infinite}
+.hero-watch{position:relative}
+.cx2-orbit{position:absolute;inset:0;pointer-events:none;--R:250px}
+.cx2-orbit::before{content:"";position:absolute;left:50%;top:50%;width:calc(var(--R)*2);height:calc(var(--R)*2);margin:calc(var(--R)*-1) 0 0 calc(var(--R)*-1);border:1px dashed rgba(201,168,106,.35);border-radius:50%;animation:cx2Spin 40s linear infinite}
+.cx2-orbit i{position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px var(--accent);animation:cx2Orb 9s linear infinite}
+.cx2-orbit i+i{width:6px;height:6px;margin:-3px;background:var(--accent2);animation-duration:15s;animation-direction:reverse}
+.header.cx2-hide{transform:translateY(-100%)}
+.card.featured{animation:cx2Glow 3.5s ease-in-out infinite}
+
+/* Cursor */
+.cx2-cursor{position:fixed;left:0;top:0;width:34px;height:34px;margin:-17px 0 0 -17px;border:1.5px solid var(--accent);border-radius:50%;pointer-events:none;z-index:300;opacity:0;transition:width .25s,height .25s,margin .25s,background .25s,opacity .3s}
+.cx2-cursor.on{opacity:1}
+.cx2-cursor.big{width:64px;height:64px;margin:-32px 0 0 -32px;background:rgba(201,168,106,.15)}
+.cx2-cursor.dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--accent);border:0}
+
+/* Ripple */
+.btn{position:relative;overflow:hidden}
+.cx2-rp{position:absolute;width:40px;height:40px;margin:-20px 0 0 -20px;border-radius:50%;background:rgba(255,255,255,.55);pointer-events:none;animation:cx2Rp .6s ease-out}
+
+/* Marquee */
+.cx2-mq{overflow:hidden;border-block:1px solid var(--line);background:var(--bg2);padding:16px 0;white-space:nowrap}
+.cx2-mq div{display:inline-block;animation:cx2Mq 30s linear infinite}
+.cx2-mq:hover div{animation-play-state:paused}
+.cx2-mq span{display:inline-block;margin-right:48px;font-size:14px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.cx2-mq span::before{content:"✦";color:var(--accent);margin-right:48px}
+
+/* Sensors */
+.cx2-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.cx2-tile{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;text-align:center;display:grid;gap:12px;justify-items:center;overflow:hidden}
+.cx2-tile b{font-size:34px;font-variant-numeric:tabular-nums}
+.cx2-tile small{font-size:13px;color:var(--muted);font-weight:400}
+.cx2-hb{font-size:38px;color:#ff5a6e;animation:cx2Beat .9s infinite;display:inline-block}
+.cx2-tile svg.ecg{width:100%;height:60px}
+.cx2-ecg{fill:none;stroke:#ff5a6e;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:600;stroke-dashoffset:600;animation:cx2Ecg 2.6s linear infinite;filter:drop-shadow(0 0 6px #ff5a6e)}
+.cx2-or{width:110px;transform:rotate(-90deg)}
+.cx2-or circle{fill:none;stroke-width:8;stroke-linecap:round}
+.cx2-or .bg{stroke:var(--line)}
+.cx2-or .fg{stroke:#7ee8ff;transition:stroke-dasharray 1s;filter:drop-shadow(0 0 5px #7ee8ff)}
+.cx2-bat{width:150px;height:46px;border:3px solid var(--accent);border-radius:10px;padding:4px;position:relative}
+.cx2-bat::after{content:"";position:absolute;right:-10px;top:12px;width:6px;height:14px;background:var(--accent);border-radius:0 3px 3px 0}
+.cx2-bat i{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,#7ee8a8,var(--accent));animation:cx2Chg 5s ease-in-out infinite}
+
+/* Quiz */
+.cx2-quiz{max-width:640px;margin:36px auto 0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+.cx2-bar{height:5px;background:var(--line);border-radius:5px;margin-bottom:24px;overflow:hidden}
+.cx2-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent2),var(--accent));transition:width .5s}
+.cx2-step{animation:cx2Fade .5s}
+.cx2-opt{display:block;width:100%;margin-top:10px;background:var(--bg);border:1px solid var(--line);color:var(--text);padding:14px;border-radius:12px;cursor:pointer;font:inherit;transition:.2s}
+.cx2-opt:hover{border-color:var(--accent);transform:translateX(6px)}
+
+/* Dock + clock mode */
+.cx2-dock{position:fixed;left:20px;bottom:76px;display:flex;flex-direction:column;gap:10px;z-index:45}
+.cx2-dock button{background:var(--bg);color:var(--text);border:1px solid var(--accent);border-radius:999px;padding:10px 16px;cursor:pointer;font:inherit;font-size:14px;text-align:left}
+.cx2-dock button:hover{background:var(--card)}
+.cx2-clock{position:fixed;inset:0;z-index:400;display:grid;place-content:center;text-align:center;background:radial-gradient(circle at 30% 30%,#2a2210,#000 70%);cursor:pointer;overflow:hidden;animation:cx2Fade .4s;color:#f2f3f7}
+.cx2-clock::before{content:"";position:absolute;left:50%;top:50%;width:140vmax;height:140vmax;margin:-70vmax;background:conic-gradient(transparent,rgba(201,168,106,.18),transparent 30%);animation:cx2Spin 14s linear infinite}
+.cx2-clock>*{position:relative}
+.cx2-ring{position:absolute!important;left:50%;top:50%;width:min(80vmin,620px);height:min(80vmin,620px);margin:calc(min(80vmin,620px)/-2) 0 0 calc(min(80vmin,620px)/-2);border:1px solid rgba(201,168,106,.45);border-radius:50%;animation:cx2Pulse 4s infinite}
+.cx2-time{font-size:clamp(54px,14vw,190px);font-weight:800;font-variant-numeric:tabular-nums;background:linear-gradient(135deg,#e8d3a0,#c9a86a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cx2-time i{font-style:normal;animation:cx2Blink 1s steps(1) infinite}
+.cx2-date{font-size:20px;color:#e8d3a0;letter-spacing:.2em;text-transform:uppercase}
+.cx2-clock small{margin-top:24px;color:#9097a8}
+.cx2-conf{position:fixed;inset:0;pointer-events:none;z-index:500}
+
+@media(max-width:900px){
+  .cx2-tiles{grid-template-columns:1fr}
+  .cx2-orbit{--R:165px}
+  .cx2-dock{left:12px;bottom:68px}
+}/* ===== Jonli soatlar (qo'shimcha modul) ===== */
+.lw{background:radial-gradient(60% 50% at 50% 0%,rgba(201,168,106,.10),transparent 70%),var(--bg);border-block:1px solid var(--line)}
+.lw-modes{display:flex;justify-content:center;gap:10px;margin:28px 0 0}
+.lw-modes button{background:var(--card);color:var(--muted);border:1px solid var(--line);padding:9px 20px;border-radius:999px;cursor:pointer;font:inherit;font-size:14px;transition:.25s}
+.lw-modes button.on{background:linear-gradient(135deg,var(--accent2),var(--accent));color:#111;border-color:transparent;font-weight:700}
+.lw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:50px}
+
+.lw-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px 22px 26px;position:relative;overflow:hidden;
+  opacity:0;transform:translateY(40px);transition:opacity .8s,transform .8s,border-color .3s}
+.lw-card.lw-in{opacity:1;transform:none}
+.lw-card:hover{border-color:var(--accent)}
+.lw-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,var(--glow),transparent 62%);opacity:.22;pointer-events:none;transition:.4s;animation:lwGlow 5s ease-in-out infinite}
+.lw-card:hover::before{opacity:.42}
+@keyframes lwGlow{50%{opacity:.4}}
+
+.lw-stage{position:relative;transition:transform .15s ease-out;transform-style:preserve-3d;will-change:transform}
+.lw-stage.lw-reset{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+/* o'z-o'zidan chayqalish (sichqoncha yo'q paytda ham qimirlab turadi) */
+.lw-stage.lw-idle{animation:lwSway 8s ease-in-out infinite}
+@keyframes lwSway{
+  0%{transform:perspective(900px) rotateY(0) rotateX(0)}
+  25%{transform:perspective(900px) rotateY(11deg) rotateX(4deg)}
+  50%{transform:perspective(900px) rotateY(0) rotateX(-3deg)}
+  75%{transform:perspective(900px) rotateY(-11deg) rotateX(4deg)}
+  100%{transform:perspective(900px) rotateY(0) rotateX(0)}
+}
+.lw-svg{display:block;width:100%;max-width:250px;margin:0 auto;filter:drop-shadow(0 22px 26px rgba(0,0,0,.6));animation:lwFloat 7s ease-in-out infinite}
+.lw-card:nth-child(2) .lw-svg{animation-delay:-2s}
+.lw-card:nth-child(3) .lw-svg{animation-delay:-4s}
+@keyframes lwFloat{50%{transform:translateY(-8px)}}
+.lw-glare{position:absolute;inset:0;pointer-events:none;border-radius:50%;
+  background:radial-gradient(circle at var(--gx,50%) var(--gy,30%),rgba(255,255,255,.22),transparent 45%);opacity:0;transition:opacity .3s}
+.lw-stage:hover .lw-glare{opacity:1}
+
+.lw-info{text-align:center;position:relative}
+.lw-time{font-variant-numeric:tabular-nums;color:var(--accent2);letter-spacing:.18em;font-size:14px;margin-top:6px}
+.lw-info h3{margin:6px 0 6px}
+.lw-info p{color:var(--muted);font-size:15px}
+
+/* Ranglar */
+.lw-colors{margin-top:18px;display:grid;gap:12px;justify-items:center}
+.lw-label{font-size:13px;color:var(--muted)}
+.lw-label b{color:var(--text);font-weight:600}
+.lw-swatches{display:flex;gap:12px;justify-content:center}
+.lw-sw{width:30px;height:30px;border-radius:50%;border:2px solid transparent;outline:1px solid var(--line);outline-offset:2px;cursor:pointer;transition:.2s}
+.lw-sw:hover{transform:scale(1.15)}
+.lw-sw.on{border-color:var(--bg);outline:2px solid var(--accent);transform:scale(1.1)}
+.lw-custom{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.lw-custom label{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);cursor:pointer}
+.lw-custom input[type=color]{width:30px;height:30px;padding:0;border:1px solid var(--line);border-radius:8px;background:none;cursor:pointer}
+.lw-custom input[type=color]::-webkit-color-swatch-wrapper{padding:2px}
+.lw-custom input[type=color]::-webkit-color-swatch{border:0;border-radius:6px}
+
+.lw-chips{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:16px 0 4px}
+.lw-chips li{font-size:12px;border:1px solid var(--line);color:var(--muted);padding:4px 12px;border-radius:999px}
+.lw-foot{display:flex;justify-content:space-between;align-items:center;margin-top:20px;text-align:left}
+.lw-foot strong{font-size:26px}
+
+/* Qurilmada "harakatni kamaytirish" yoqilgan bo'lsa ham soatlar qimirlab tursin */
+.lw-svg{animation:lwFloat 7s ease-in-out infinite!important}
+.lw-stage.lw-idle{animation:lwSway 8s ease-in-out infinite!important}
+.lw-card::before{animation:lwGlow 5s ease-in-out infinite!important}
+
+@media(max-width:900px){
+  .lw-grid{grid-template-columns:1fr;max-width:460px;margin-inline:auto}
+}  /* ===== Haqiqiy sayt qo'shimchalari ===== */
+.cx3-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.cx3-box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;text-align:center;display:grid;gap:10px;justify-items:center;transition:.3s}
+.cx3-box:hover{border-color:var(--accent);transform:translateY(-4px)}
+.cx3-box>span{font-size:34px}
+.cx3-box p{color:var(--muted);font-size:15px}
+.cx3-box select{max-width:240px}
+.cx3-cookie{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:250;display:flex;gap:16px;align-items:center;
+  background:var(--bg2);border:1px solid var(--accent);border-radius:16px;padding:14px 20px;width:min(640px,94%);font-size:14px;color:var(--muted)}
+.cx3-cookie[hidden]{display:none}
+.cx3-modal{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:300;display:grid;place-items:center;padding:16px}
+.cx3-modal[hidden]{display:none}
+.cx3-mbox{position:relative;background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px;width:min(560px,100%)}
+.cx3-mbox p{color:var(--muted);margin-top:10px}
+.cx3-x{position:absolute;top:10px;right:16px;background:none;border:0;color:var(--text);font-size:28px;cursor:pointer}
+@media(max-width:900px){
+  .cx3-grid{grid-template-columns:1fr}
+  .cx3-cookie{flex-direction:column;text-align:center}
+}                                                                           
